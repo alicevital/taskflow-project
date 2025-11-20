@@ -3,9 +3,20 @@ from pydantic import BaseModel
 
 class User(BaseModel):
     id: int
-    name: str
+    username: str
     email: str
     description: str
+    password: str
+
+class CreateUser(User):
+    useername: str
+    email: str
+    password: str
+
+class UserLogin(User):
+    username: str
+    email: str
+    password: str
 
 class Task(BaseModel):
     id: int
@@ -14,3 +25,7 @@ class Task(BaseModel):
     status: str
     content: str
 
+class CreateTask(Task):
+    name: str
+    status: str
+    content: str
